@@ -1,0 +1,41 @@
+@import url("../css/components/recycled.css");
+@import url("../css/components/forms.css");
+.navbar {
+    background-color: #0099ffa7 !important;
+    backdrop-filter: blur(3px) !important;
+}
+.main {
+    margin-top: 15vh;
+    display: inline-flex;
+    flex-direction: column;
+}
+.options {
+    background-color: #2a265f;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.btn-opt {
+    height: fit-content;
+    background-color: #2a265f;
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    font-family: "Bebas Neue", cursive;
+}
+.selected {
+    background-color: #0099ffa7;
+    color: #2a265f;
+}
+.btn-opt:hover {
+    border-inline: 1px solid #fff;
+    background-color: #ddd;
+    color: #2a265f;
+}
+.panel {
+    padding: 2rem;
+}
+.actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}

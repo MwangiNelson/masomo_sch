@@ -1,0 +1,6 @@
+@import url("../css/components/recycled.css");
+@import url("../css/components/forms.css");
+.navbar {
+    background-color: #0099ffa7 !important;
+    backdrop-filter: blur(3px) !important;
+}

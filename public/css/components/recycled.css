@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chonburi&family=Lora&family=Nunito:wght@300&display=swap");
+* {
+    box-sizing: border-box;
+    font-family: "Lora", serif;
+}
+body {
+    width: 100vw !important;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+.navbar {
+    position: fixed;
+    height: 15vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    /* background-color: #ffa2ad; */
+    color: white;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 5rem;
+}
+.navbar:hover {
+    background-color: #0099ffa7;
+    backdrop-filter: blur(3px);
+}
+.school_logo {
+    justify-self: start !important;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: fit-content;
+}
+
+.school_logo img {
+    width: 15vw;
+    height: 12vh;
+    object-fit: cover;
+}
+.nav_links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-right: 5rem;
+}
+.nav_links a {
+    color: #051e2f;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.nav_links a:hover {
+    transform: scale(1.1);
+    text-shadow: 4px 0px 0px rgba(0, 0, 0, 0.19);
+}
+
+/* 
+footer */
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #051e2f;
+    color: #f0eadc;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.copyright {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.copyright h4 {
+    font-family: "Bebas Neue", cursive;
+    font-size: 1.5rem;
+}
+.logo-container img {
+    object-fit: cover;
+    width: 15rem;
+    height: inherit;
+}
+.socials {
+    list-style-type: none;
+    display: inline-flex;
+    flex-direction: row;
+    padding: 0;
+    width: 100%;
+    justify-content: start;
+    gap: 1rem;
+    margin-left: 2rem;
+}
+.socials li {
+    font-size: 3vh;
+}
+.socials li:nth-child(1):hover {
+    color: #3b5998;
+}
+.socials li:nth-child(2):hover {
+    color: #8a3ab9;
+}
+.socials li:nth-child(3):hover {
+    color: #1da1f2;
+}
+.footer-options ol {
+    list-style-type: none;
+    padding: 2rem;
+}
+.footer-options button {
+    padding: 1rem;
+    font-size: 2.5vh;
+    width: 100%;
+    color: #f0eadc;
+}
+.footer-options button:hover {
+    border: 1px solid #fff;
+}
+.footer-options a {
+    text-decoration: none;
+    color: #f0eadc;
+    font-family: "Bebas Neue", cursive;
+}
+.line-up {
+    height: 150px;
+    width: 2px;
+    background-color: #f0eadc;
+    margin-inline: 3vw;
+}
+
+/* CSS */
+.button-89 {
+    font-family: "Bebas Neue", cursive;
+    --b: 3px; /* border thickness */
+    --s: 0.45em; /* size of the corner */
+    --color: #373b44;
+
+    padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background: conic-gradient(
+            from 90deg at var(--b) var(--b),
+            #0000 90deg,
+            var(--color) 0
+        )
+        var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+        calc(100% - var(--b) - 2 * var(--_p));
+    transition: 0.3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: 0.6em;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: 0.05em;
+}
+
+.button-89:active {
+    background: var(--color);
+    color: #fff;
+}

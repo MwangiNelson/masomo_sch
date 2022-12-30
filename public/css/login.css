@@ -1,0 +1,63 @@
+@import url("../css/components/recycled.css");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora&family=Nunito:wght@300&display=swap");
+body {
+    background: linear-gradient(
+            180deg,
+            rgba(0, 153, 255, 0.54) 0%,
+            rgba(255, 255, 255, 0) 100%
+        ),
+        url("../Images/login.jpg");
+    height: fit-content;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.login-body img {
+    position: relative;
+    top: 0;
+    justify-self: center;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.login-form-container {
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 4px;
+    backdrop-filter: blur(3px);
+    border: none;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.login-form-container form {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-family: "Bebas Neue", cursive !important;
+}
+.input-field {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.btn {
+    margin-top: 2rem;
+    
+}
