@@ -33,3 +33,6 @@ Route::get('/unit', function () {
 Route::get('/admin', function () {
     return view('admin/admin');
 });
+Route::get('/login', [MainController::class, 'login']);
+Route::post('/auth/check',[MainController::class, 'check'])->name('auth.check');
+Route::post('/auth/save',[MainController::class, 'save'])->name('auth.save');

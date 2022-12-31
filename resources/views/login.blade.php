@@ -35,7 +35,7 @@
     </nav>
     <section class="login-body w-75">
         <div class="login-form-container w-75">
-            <form action="" method="POST" class="w-100">
+            <form action="{{ route('auth.check') }}" method="POST" class="w-100">
                 @if(Session::get('fail'))
                 <div class="alert alert-danger">
                     {{ Session::get('fail') }}
