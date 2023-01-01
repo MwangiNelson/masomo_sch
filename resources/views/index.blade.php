@@ -28,8 +28,8 @@
             </div>
             <div class="nav_links">
                 <button class="button-89 w-100" role="button">HOME </button>
-                <a href="admin"> <button class="button-89 w-100" role="button">ABOUT </button></a>
-                <a href="student"> <button class="button-89 w-100" role="button">CONTACT </button></a>
+                <a href=""> <button class="button-89 w-100" role="button">ABOUT </button></a>
+                <a href=""> <button class="button-89 w-100" role="button">CONTACT </button></a>
 
                 <!-- HTML !-->
                 <a href="login"><button class="button-89 w-100" role="button">LOGIN </button></a>

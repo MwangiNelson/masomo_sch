@@ -10,7 +10,7 @@
 
     <!-- Fontawesome icons cdn link -->
     <script src="https://kit.fontawesome.com/db540a34d6.js" crossorigin="anonymous"></script>
-
+    <script src="js/app.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,78 +20,27 @@
 </head>
 
 
-<body>
+<body id="admin_body">
     <nav class="navbar w-100">
         <div class="school_logo">
             <img src="images/masomo_logo.png" alt="">
         </div>
         <div class="nav_links">
-            <a href="/"> <button class="button-89 w-100" role="button">LOGOUT </button></a>
+            <a href="logout"> <button class="button-89 w-100" role="button">LOGOUT </button></a>
         </div>
     </nav>
     <section class="main w-100">
         <div class="options w-100">
             <button class="btn-opt selected">STUDENTS</button>
             <button class="btn-opt">STAFF</button>
-            <button class="btn-opt">REQUESTS</button>
+
             <button class="btn-opt">UNITS</button>
         </div>
 
-        <div class="panel w-100">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                        <th scope="col">Class</th>
-                        <th scope="col">Options</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>BET 2</td>
-                        <td>
-                            <div class="actions">
-                                <button class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>BET 2</td>
-                        <td>
-                            <div class="actions">
-                                <button class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>BET 2</td>
-                        <td>
-                            <div class="actions">
-                                <button class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        @include('admin\panels\panel_students')
+        @include('admin\panels\panel_staff')
+        @include('admin\panels\panel_units')
+
     </section>
 
 </body>

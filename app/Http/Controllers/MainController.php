@@ -121,16 +121,17 @@ class MainController extends Controller
     }
     function students()
     {
+        $unit_data = tbl_unit::all();
         $data = ['LoggedUserInfo' => tbl_students::where('stud_id', '=', session('student_id'))->first()];
-        return view('/STC/student', $data);
+        return view('/students/student', $data, compact('unit_data'));
     }
     function admin()
     {
         $student_data = tbl_students::all();
         $staff_data = tbl_staff::all();
         $unit_data = tbl_unit::all();
-        $data = ['LoggedUserInfo' => tbl_staff::where('staff_id', '=', session('staff_id'))->first()];
-        return view('/HR/admin', $data, compact('student_data', 'unit_data', 'staff_data'));
+        // $data = ['LoggedUserInfo' => tbl_staff::where('staff_id', '=', session('staff_id'))->first()];
+        return view('/admin/admin', compact('student_data', 'unit_data', 'staff_data'));
     }
     function lec()
     {
@@ -161,6 +162,15 @@ class MainController extends Controller
         $deletion = tbl_unit::where('id', $id)->delete();
         if ($deletion) {
             return back()->with('success', 'Selected unit was been deleted successfully');
+        } else {
+            return back()->with('fail', 'Something went wrong, try again later');
+        }
+    }
+    function delete_staff($id)
+    {
+        $deletion = tbl_staff::where('staff_id', $id)->delete();
+        if ($deletion) {
+            return back()->with('success', 'Selected staff was been deleted successfully');
         } else {
             return back()->with('fail', 'Something went wrong, try again later');
         }

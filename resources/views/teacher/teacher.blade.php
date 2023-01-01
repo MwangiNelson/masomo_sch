@@ -14,7 +14,7 @@
     <script src="https://kit.fontawesome.com/db540a34d6.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/css/students.css">
-    <title>HOME - MASOMO SCHOOL</title>
+    <title>TEACHERS PANEL - MASOMO SCHOOL</title>
 </head>
 
 <body>
@@ -30,53 +30,6 @@
 
     </nav>
     <section class="main w-100">
-        <div class="programs w-75">
-            <div class="header w-100">
-                <h2>Upcoming programs</h2>
-            </div>
-            <hr>
-            <div class="prog-grid w-75">
-                <div class="prog-card w-100">
-                    <img src="images/class.jpg" alt="">
-
-                    <div class="details">
-                        <h4>CHESS MASTERCLASS TRAINING 2023</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quis temporibus dolorum magni tempore eveniet iusto minima quisquam impedit! Illo pariatur ab dicta provident id.</p>
-                    </div>
-                    <div class="prog-btn w-100">
-                        <!-- HTML !-->
-                        <button class="button-54 w-100" role="button">READ MORE</button>
-
-                    </div>
-                </div>
-                <div class="prog-card w-100">
-                    <img src="images/class.jpg" alt="">
-
-                    <div class="details">
-                        <h4>CHESS MASTERCLASS TRAINING 2023</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quis temporibus dolorum magni tempore eveniet iusto minima quisquam impedit! Illo pariatur ab dicta provident id.</p>
-                    </div>
-                    <div class="prog-btn w-100">
-                        <!-- HTML !-->
-                        <button class="button-54 w-100" role="button">READ MORE</button>
-
-                    </div>
-                </div>
-                <div class="prog-card w-100">
-                    <img src="images/class.jpg" alt="">
-
-                    <div class="details">
-                        <h4>CHESS MASTERCLASS TRAINING 2023</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium quis temporibus dolorum magni tempore eveniet iusto minima quisquam impedit! Illo pariatur ab dicta provident id.</p>
-                    </div>
-                    <div class="prog-btn w-100">
-                        <!-- HTML !-->
-                        <button class="button-54 w-100" role="button">READ MORE</button>
-
-                    </div>
-                </div>
-            </div>
-        </div>
         <hr class="w-75">
         <div class="units w-75">
             <div class="header w-100">
