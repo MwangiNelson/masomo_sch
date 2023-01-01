@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
-Route::get('/login', function () {
-    return view('login');
 });
 Route::get('/student', function () {
     return view('students/student');
@@ -34,5 +32,5 @@ Route::get('/admin', function () {
     return view('admin/admin');
 });
 Route::get('/login', [MainController::class, 'login']);
-Route::post('/auth/check',[MainController::class, 'check'])->name('auth.check');
-Route::post('/auth/save',[MainController::class, 'save'])->name('auth.save');
+Route::post('/auth/check', [MainController::class, 'check'])->name('auth.check');
+Route::post('/auth/save', [MainController::class, 'save'])->name('auth.save');

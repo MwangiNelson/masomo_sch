@@ -34,13 +34,25 @@
     </nav>
     <div class="w-100 form-holder">
 
-        <form action="" method="post" class="form w-75">
+        <form action="{{route('auth.save')}}" method="POST" class="form w-75">
+            @csrf
             <div class="enrollment-header w-100">
                 <h1>FILL IN THE FORM BELOW TO REGISTER FOR ENROLLMENT</h1>
             </div>
             <hr>
 
             <div class="student-data w-100">
+                @if(Session::get('success'))
+                <div class="alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+                @endif
+
+                @if(Session::get('fail'))
+                <div class="alert alert-danger">
+                    {{ Session::get('fail') }}
+                </div>
+                @endif
                 <div class="data-head">
                     <h3>Student details</h3>
                     <hr class="w-100">
@@ -83,8 +95,8 @@
                     <input type="number" class="phone_num form-control w-100" name="phone_num" id="phone_num">
                 </div>
                 <div class="s-input w-100">
-                    <label for="phone_no">Address :</label>
-                    <input type="text" class="address form-control w-100" name="address" id="address">
+                    <label for="password">Password :</label>
+                    <input type="password" class="password form-control w-100" name="password" id="password">
                 </div>
 
                 <div class="s-input w-100">

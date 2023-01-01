@@ -14,7 +14,13 @@ class CreateTblStaffsTable extends Migration
     public function up()
     {
         Schema::create('tbl_staffs', function (Blueprint $table) {
-            $table->id();
+            $table->id('staff_id');
+            $table->string('staff_name');
+            $table->string('staff_email')->unique();
+            $table->string('staff_password');
+            $table->integer('staff_role');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

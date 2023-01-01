@@ -14,7 +14,13 @@ class CreateTblStudentsTable extends Migration
     public function up()
     {
         Schema::create('tbl_students', function (Blueprint $table) {
-            $table->id();
+            $table->id('stud_id');
+            $table->string('stud_name');
+            $table->string('stud_email')->unique();
+            $table->string('stud_password');
+            $table->string('stud_enrol_status');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -15,6 +15,12 @@ class CreateTblUnitsTable extends Migration
     {
         Schema::create('tbl_units', function (Blueprint $table) {
             $table->id();
+            $table->string('unit_name');
+            $table->string('unit_code')->unique();
+            $table->longText('unit_desc');
+            $table->integer('unit_chapters');
+            $table->string('unit_lecturer');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
