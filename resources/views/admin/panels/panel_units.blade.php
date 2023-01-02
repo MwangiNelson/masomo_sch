@@ -67,7 +67,7 @@
                 <td>
                     <div class="options-btns" style="display: flex; flex-direction:row;">
                         <a href=""><button class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button></a>
-                        <a href=""><button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button></a>
+                        <a href="{{ url('delete-unit/'.$item->id) }}"><button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button></a>
                     </div>
                 </td>
             </tr>
