@@ -14,52 +14,42 @@
     <script src="https://kit.fontawesome.com/db540a34d6.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/css/students.css">
-    <title>TEACHERS PANEL - MASOMO SCHOOL</title>
+    <title>STUDENT - MASOMO SCHOOL</title>
 </head>
 
 <body>
     <nav class="navbar w-100">
         <div class="school_logo">
-            <img src="images/masomo_logo.png" alt="">
+            <img src="/images/masomo_logo.png" alt="">
         </div>
         <div class="nav_links">
-            <a href="{{route('logout')}}"> <button class="button-89 w-100" role="button">LOGOUT </button></a>
-
+            <a href="{{route('student')}}"><button class="button-89 w-100" role="button">BACK</button></a>
         </div>
-
     </nav>
-    <section class="main w-100">
-        <hr class="w-75">
-        <div class="units w-75">
-            <div class="header w-100">
-                <h2>My units</h2>
+    <section class="main w-100 p-4" style="min-height: 70vh; justify-content:start;">
+        <div class="unit-head w-100">
+            <div class="unit-name w-75">
+                <h2>{{$unit->unit_name}}</h2>
+                <h4>ICS{{$unit->unit_code}}</h4>
             </div>
-            <hr>
-            <div class="units-grid w-100">
-                @foreach ($unit_data as $item)
-                <div class="unit-card w-100">
-                    <div class="sect-1">
-                        <h6>Course</h6>
-                        <h2>{{$item->unit_name}}</h2>
-                        <a href="#">{{$item->unit_chapters}} chapters <i class="fas fa-chevron-right"></i></a>
-                    </div>
-                    <div class="course-info">
-                        <div class="progress-container">
-                            <div class="progress"></div>
-                            <span class="progress-text">
-                                6/9 Challenges
-                            </span>
-                        </div>
-                        <h6>UNIT DETAILS</h6>
-                        <hr>
-                        <p class="w-75">{{$item->unit_desc}}</p>
-                        <a href="{{ url('unit/'.$item->id) }}"> <button class="btn-card">Continue</button></a>
-                    </div>
-                </div>
-                @endforeach
-
+            <div class="lecturer w-25">
+                <p>Tr. {{$unit->unit_lecturer}}</p>
             </div>
         </div>
+        @foreach ($unit_coursework as $item)
+        <div class="content w-100">
+            <h4>{{$item->cwork_head}}</h4>
+            <hr>
+            <p>{{$item->cwork_desc}}</p>
+
+            <div class="content-owner w-100">
+                <h3>POSTED BY: {{$item->posted_by}}</h3>
+                <h3>CREATED AT: {{$item->created_at}}</h3>
+            </div>
+
+        </div>
+        @endforeach
+
     </section>
     <footer class="footer ">
         <div class="copyright">

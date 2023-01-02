@@ -20,46 +20,66 @@
 <body>
     <nav class="navbar w-100">
         <div class="school_logo">
-            <img src="images/masomo_logo.png" alt="">
+            <img src="/images/masomo_logo.png" alt="">
         </div>
         <div class="nav_links">
-            <a href="{{route('logout')}}"> <button class="button-89 w-100" role="button">LOGOUT </button></a>
-
+            <a href="{{route('teacher')}}"> <button class="button-89 w-100" role="button">BACK </button></a>
         </div>
 
     </nav>
-    <section class="main w-100">
-        <hr class="w-75">
-        <div class="units w-75">
-            <div class="header w-100">
-                <h2>My units</h2>
+    <section class="main p-4 w-100">
+        <div class="unit-head w-100">
+            <div class="unit-name w-75">
+                <h2>{{$unit->unit_name}}</h2>
+                <h4>ICS{{$unit->unit_code}}</h4>
             </div>
-            <hr>
-            <div class="units-grid w-100">
-                @foreach ($unit_data as $item)
-                <div class="unit-card w-100">
-                    <div class="sect-1">
-                        <h6>Course</h6>
-                        <h2>{{$item->unit_name}}</h2>
-                        <a href="#">{{$item->unit_chapters}} chapters <i class="fas fa-chevron-right"></i></a>
-                    </div>
-                    <div class="course-info">
-                        <div class="progress-container">
-                            <div class="progress"></div>
-                            <span class="progress-text">
-                                6/9 Challenges
-                            </span>
-                        </div>
-                        <h6>UNIT DETAILS</h6>
-                        <hr>
-                        <p class="w-75">{{$item->unit_desc}}</p>
-                        <a href="{{ url('unit/'.$item->id) }}"> <button class="btn-card">Continue</button></a>
-                    </div>
-                </div>
-                @endforeach
 
-            </div>
         </div>
+
+        <div class="content w-100 m-0 p-2">
+            <div class="header">
+                <h4>ADD COURSEWORK</h4>
+                <hr>
+            </div>
+            @if(Session::get('success'))
+            <div class="alert alert-success">
+                {{ Session::get('success') }}
+            </div>
+            @endif
+
+            @if(Session::get('fail'))
+            <div class="alert alert-danger">
+                {{ Session::get('fail') }}
+            </div>
+            @endif
+            <form action="{{ url('add-work/'.$unit->id) }}" method="post">
+                @csrf
+                <div class="form-input p-2 w-100">
+                    <label for="header">TITLE:</label>
+                    <input type="text" required name="cwork_head" class="form-control w-75">
+                </div>
+                <div class="form-input p-2 w-100">
+                    <label for="header">DETAILS:</label>
+                    <textarea name="cwork_desc" required class="form-control w-75" id="" rows="4"></textarea>
+                </div>
+                <div class="form-input p-2 w-100">
+                    <button class="btn btn-primary">
+                        ADD COURSEWORK
+                    </button>
+                </div>
+
+
+            </form>
+
+        </div>
+        @foreach ($unit_coursework as $item)
+        <div class="content w-100">
+            <h3>{{$item->cwork_head}}</h3>
+            <p>{{$item->cwork_desc}}</p>
+            <a href="{{ url('delete-work/'.$item->id) }}"><button class="btn btn-outline-danger">DELETE WORK</button></a>
+        </div>
+        @endforeach
+
     </section>
     <footer class="footer ">
         <div class="copyright">

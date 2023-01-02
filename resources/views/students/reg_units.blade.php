@@ -14,7 +14,7 @@
     <script src="https://kit.fontawesome.com/db540a34d6.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/css/students.css">
-    <title>TEACHERS PANEL - MASOMO SCHOOL</title>
+    <title>HOME - MASOMO SCHOOL</title>
 </head>
 
 <body>
@@ -23,42 +23,49 @@
             <img src="images/masomo_logo.png" alt="">
         </div>
         <div class="nav_links">
-            <a href="{{route('logout')}}"> <button class="button-89 w-100" role="button">LOGOUT </button></a>
 
+            <a href="{{route('student')}}"> <button class="button-89 w-100" role="button">BACK </button></a>
         </div>
 
     </nav>
-    <section class="main w-100">
-        <hr class="w-75">
-        <div class="units w-75">
-            <div class="header w-100">
-                <h2>My units</h2>
-            </div>
+    <section class="main-2 w-100 pt-2">
+        <div class=" header w-75">
+            <h3>AVAILABLE COURSES</h3>
             <hr>
-            <div class="units-grid w-100">
-                @foreach ($unit_data as $item)
-                <div class="unit-card w-100">
-                    <div class="sect-1">
-                        <h6>Course</h6>
-                        <h2>{{$item->unit_name}}</h2>
-                        <a href="#">{{$item->unit_chapters}} chapters <i class="fas fa-chevron-right"></i></a>
+        </div>
+        @if(Session::get('success'))
+        <div class="alert alert-success">
+            {{ Session::get('success') }}
+        </div>
+        @endif
+
+        @if(Session::get('fail'))
+        <div class="alert alert-danger">
+            {{ Session::get('fail') }}
+        </div>
+        @endif
+        <div class="registration-section w-75">
+            @foreach ($unit as $item)
+            <div class="unit-card-reg">
+                <div class="card-details w-100">
+                    <h6>COURSE NAME: </h6>
+                    <h4>{{$item->unit_name}}</h4>
+                    <p>Chapters: <span class="chapters">{{$item->unit_chapters}}</span></p>
+                    <h6>Description:</h6>
+                    <hr class="w-50">
+                    <span class="chapters">{{$item->unit_desc}}</span>
+                    <hr>
+                    <div class="w-100" style="display: flex; flex-direction:row; text-transform:uppercase; align-items:baseline; gap:2rem;">
+                        <h6>LECTURER:
+                        </h6>
+                        <p>{{$item->unit_lecturer}}</p>
                     </div>
-                    <div class="course-info">
-                        <div class="progress-container">
-                            <div class="progress"></div>
-                            <span class="progress-text">
-                                6/9 Challenges
-                            </span>
-                        </div>
-                        <h6>UNIT DETAILS</h6>
-                        <hr>
-                        <p class="w-75">{{$item->unit_desc}}</p>
-                        <a href="{{ url('unit/'.$item->id) }}"> <button class="btn-card">Continue</button></a>
-                    </div>
+
                 </div>
-                @endforeach
+                <form action="{{url('reg_unit/'.$item->id )}}" method="post">@csrf<button class="register-btn">REGISTER</button></form>
 
             </div>
+            @endforeach
         </div>
     </section>
     <footer class="footer ">
@@ -82,7 +89,6 @@
         </div>
 
     </footer>
-
 </body>
 
 </html>

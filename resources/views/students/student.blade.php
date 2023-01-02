@@ -23,8 +23,8 @@
             <img src="images/masomo_logo.png" alt="">
         </div>
         <div class="nav_links">
-            <a href="/"> <button class="button-89 w-100" role="button">HOME </button></a>
-            <button class="button-89 w-100" role="button">ABOUT </button>
+            <a href="{{route('logout')}}"> <button class="button-89 w-100" role="button">LOGOUT </button></a>
+            <a href="{{route('register_units')}}"> <button class="button-89 w-100" role="button">UNIT REGISTRATION </button></a>
             <button class="button-89 w-100" role="button">CONTACT </button>
         </div>
 
@@ -84,12 +84,11 @@
             </div>
             <hr>
             <div class="units-grid w-100">
-                @foreach ($unit_data as $item)
+                @foreach ($my_units as $item)
                 <div class="unit-card w-100">
                     <div class="sect-1">
                         <h6>Course</h6>
                         <h2>{{$item->unit_name}}</h2>
-                        <a href="#">{{$item->unit_chapters}} chapters <i class="fas fa-chevron-right"></i></a>
                     </div>
                     <div class="course-info">
                         <div class="progress-container">
@@ -98,10 +97,10 @@
                                 6/9 Challenges
                             </span>
                         </div>
-                        <h6>UNIT DETAILS</h6>
+                        <h6>DATES:</h6>
                         <hr>
-                        <p class="w-75">{{$item->unit_desc}}</p>
-                        <a href="unit"> <button class="btn-card">Continue</button></a>
+                        <p class="w-75">{{$item->created_at}}</p>
+                        <a href="{{ url('course/'.$item->unit_id) }}"> <button class="btn-card">Continue</button></a>
                     </div>
                 </div>
                 @endforeach

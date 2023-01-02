@@ -10,6 +10,15 @@
     justify-content: center;
     align-items: center;
 }
+.main-2 {
+    margin-top: 15vh;
+
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    min-height: 80vh;
+}
 .header {
     text-align: center;
     display: block;
@@ -204,4 +213,112 @@ h2 {
     padding: 1rem;
     border: none;
     font-family: "Bebas Neue", cursive;
+}
+.main-section {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-block: 2rem;
+    height: 80vh;
+    overflow-y: scroll;
+}
+.content-owner {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+}
+h3 {
+    font-family: "Josefin Sans", sans-serif !important;
+}
+.registration-section {
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+.unit-card-reg {
+    font-family: "Josefin Sans", sans-serif !important;
+    box-shadow: #000000 0px 0px 0px 2px inset;
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    transition: all 0.5s ease;
+}
+.unit-card-reg h6 {
+    font-size: 0.5rem;
+}
+.unit-card-reg:hover {
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    transform: scale(1.025);
+}
+.card-details {
+    padding: 2rem;
+    width: 100%;
+}
+.register-btn {
+    background-color: #252729;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    color: #fff;
+}
+.units-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-block: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.unit-head {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    border: 1px solid rgb(86, 86, 86);
+    padding: 2rem;
+}
+.unit-name {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.content {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 2rem;
+    border: 1px solid rgb(86, 86, 86);
+}
+
+.content h3 {
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+}
+.content p {
+    font-family: "Gilda Display", serif;
+}
+.registration-section {
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+.unit-card-reg {
+    font-family: "Josefin Sans", sans-serif !important;
+    box-shadow: #000000 0px 0px 0px 2px inset;
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    transition: all 0.5s ease;
+}
+.unit-card-reg h6 {
+    font-size: 0.5rem;
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTblCworksTable extends Migration
+class CreateTblRegistrationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateTblCworksTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_cworks', function (Blueprint $table) {
+        Schema::create('tbl_registrations', function (Blueprint $table) {
             $table->id();
-            $table->string('cwork_head');
-            $table->longText('cwork_desc');
-            $table->string('posted_by');
-            $table->string('cwork_unit');
-            $table->rememberToken();
+            $table->integer('student_id');
+            $table->string('student_name');
+            $table->integer('unit_id');
+            $table->string('unit_name');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateTblCworksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_cworks');
+        Schema::dropIfExists('tbl_registrations');
     }
 }
